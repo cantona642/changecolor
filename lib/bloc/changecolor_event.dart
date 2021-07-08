@@ -26,3 +26,11 @@ class ChangeRed extends ChangecolorEvent {
   @override
   get props => [colorModel];
 }
+
+class ChangeOrange extends ChangecolorEvent {
+  final ColorModel colorModel;
+
+  const ChangeOrange(this.colorModel);
+  @override
+  get props => [colorModel];
+}

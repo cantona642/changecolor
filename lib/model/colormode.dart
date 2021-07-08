@@ -1,5 +1,14 @@
+// class ColorModel {
+//   final bool isChange;
+
+//   ColorModel(
+//     this.isChange,
+//   );
+// }
+import 'package:flutter/material.dart';
+
 class ColorModel {
-  final bool isChange;
+  final Color isChange;
 
   ColorModel(
     this.isChange,

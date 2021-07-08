@@ -22,8 +22,7 @@ class MainPage extends StatelessWidget {
                 Container(
                   height: 100.0,
                   decoration: BoxDecoration(
-                      color:
-                          state.colormodel.isChange ? Colors.red : Colors.blue,
+                      color: state.colormodel.isChange,
                       border: Border.all(color: Colors.black, width: 1),
                       borderRadius: BorderRadius.circular(12)),
                 ),
@@ -70,6 +69,20 @@ class MainPage extends StatelessWidget {
                   },
                   child: Icon(Icons.remove),
                   backgroundColor: Colors.red,
+                ),
+              ),
+              SizedBox(
+                width: 10.0,
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    BlocProvider.of<ChangecolorBloc>(context)
+                        .add(ChangeOrange(state.colormodel));
+                  },
+                  child: Icon(Icons.remove),
+                  backgroundColor: Colors.orange,
                 ),
               ),
             ],

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:colorchange/model/colormode.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 part 'changecolor_event.dart';
 part 'changecolor_state.dart';
@@ -15,13 +16,17 @@ class ChangecolorBloc extends Bloc<ChangecolorEvent, ChangecolorState> {
     ChangecolorEvent event,
   ) async* {
     if (event is ChangeFetch) {
-      yield ChangeColorLoaded(ColorModel(false));
+      ColorModel(Colors.blue);
+      yield ChangeColorLoaded(ColorModel(Colors.blue));
     } else if (event is ChangeRed) {
-      print(ColorModel(true));
-      yield ChangeColorLoaded(ColorModel(true));
+      ColorModel(Colors.red);
+      yield ChangeColorLoaded(ColorModel(Colors.red));
     } else if (event is ChangeBlue) {
-      print(ColorModel(false));
-      yield ChangeColorLoaded(ColorModel(false));
+      ColorModel(Colors.blue);
+      yield ChangeColorLoaded(ColorModel(Colors.blue));
+    } else if (event is ChangeOrange) {
+      ColorModel(Colors.orange);
+      yield ChangeColorLoaded(ColorModel(Colors.orange));
     }
   }
 }
